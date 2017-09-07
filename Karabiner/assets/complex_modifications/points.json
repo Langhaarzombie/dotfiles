@@ -1,0 +1,73 @@
+{
+	"title": "Change ´",
+	"rules": [
+		{
+			"description": "Change ' to backslash",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "equal_sign",
+						"modifiers": {
+							"mandatory": [
+								"option"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "7",
+							"modifiers": [
+								"shift",
+								"option"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Change ` to |",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "equal_sign",
+						"modifiers": {
+							"mandatory": [
+								"shift"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "7",
+							"modifiers": [
+								"option"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Change ´ to ;",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "equal_sign"
+					},
+					"to": [
+						{
+							"key_code": "comma",
+							"modifiers": [
+								"shift"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

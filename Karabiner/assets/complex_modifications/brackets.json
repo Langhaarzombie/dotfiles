@@ -1,0 +1,53 @@
+{
+  "title": "Change option+0/ß to '['/']'",
+  "rules": [
+    {
+      "description": "Change option+0 to '['",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [
+				        "option"
+              ]
+            }
+          },
+          "to": [
+            {
+			       "key_code": "5",
+			       "modifiers": [
+				        "option"
+			         ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change option+ß to ']'",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen",
+            "modifiers": {
+              "mandatory": [
+				"option"
+              ]
+            }
+          },
+          "to": [
+            {
+			  "key_code": "6",
+			  "modifiers": [
+				  "option"
+			  ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
