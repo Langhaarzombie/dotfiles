@@ -1,3 +1,4 @@
+cd ~
 echo "Installing Homebrew...\n"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -46,6 +47,7 @@ brew cask install \
     keepassx \
     keepingyouawake \
     latexian \
+    moeditor \
     numi \
     shifty \
     slack \
@@ -65,20 +67,32 @@ brew install \
 	autojump \
 	fzf \
 	git \
+    ruby \
 	screenfetch \
 	tree \
-	zsh-syntax-highlighting
+    wget \
+    zsh-autosuggestions \
+	zsh-syntax-highlighting 
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\n" >> ~/.zshrc
 # For errors with syntax highlight
 # export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
+echo "\nInstalling some extra stuff...\n"
+#brew tap caskroom/fonts
+
 cd ~
 touch .antigenrc
 echo "source /usr/local/share/antigen/antigen.zsh\nantigen use oh-my-zsh" >> ~/.antigenrc
+echo "antigen bundle git" >> ~/.antigenrc
 echo "antigen bundle sudo" >> ~/.antigenrc
 echo "antigen bundle git-flow" >> ~/.antigenrc
 echo "antigen bundle alias-tips\n" >> ~/.antigenrc
+
 echo "antigen apply" >> ~/.antigenrc
 
 echo "source .antigenrc" >> ~/.zshrc
@@ -114,10 +128,12 @@ brew list
 echo "\nCheck below for any errors:\n"
 echo "Zsh version:"
 zsh --version
-
+echo "Docker version:"
+docker --version
+echo "Ruby version:"
+ruby --version
 echo "Git version:"
 git --version
-
-echo "Git installation (should be /usr/local/bin/git"
+# more pls
+echo "Git installation (should be /usr/local/bin/git)"
 which git
->> ~/.zshrc
