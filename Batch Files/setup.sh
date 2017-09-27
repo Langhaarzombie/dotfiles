@@ -26,8 +26,11 @@ brew cask install \
     qlstephen \
     qlmarkdown \
     quicklook-json \
+    qlimagesize \
     qlprettypatch \
     quicklook-csv \
+    quicklookase \
+    qlvideo \
     betterzipql \
     webpquicklook \
     suspicious-package
@@ -67,6 +70,8 @@ brew install \
 	autojump \
 	fzf \
 	git \
+    git-flow-avh \
+    openconnect \
     ruby \
 	screenfetch \
 	tree \
@@ -103,6 +108,8 @@ echo 'alias reload = "exec zsh"' >> ~/.zshrc
 echo 'alias j = "autojump"' >> ~/.zshrc
 echo 'alias l="ls -a"\n' >> ~/.zshrc
 echo 'alias g="git"' >> ~/.zshrc
+echo 'alias oc="openconnect"' >> ~/.zshrc
+echo 'clear' >> ~/.zshrc
 
 echo "\nConfiguring git...\n"
 git config --global user.name "Langhaarzombie"
