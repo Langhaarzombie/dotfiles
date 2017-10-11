@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 9,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#FFFFFFC4",
+        "font" : "System Light",
+        "color" : "#7B729EFF"
+      },
+      "shortcut" : {
+        "size" : 19,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System Light",
+        "color" : "#A185E0FF"
+      },
+      "backgroundSelected" : "#3D2363FF",
+      "text" : {
+        "size" : 19,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System Light",
+        "color" : "#FEFFFEFF"
+      },
+      "iconPaddingHorizontal" : 10,
+      "paddingVertical" : 12,
+      "iconSize" : 50
+    },
+    "search" : {
+      "paddingVertical" : 11,
+      "background" : "#5B389071",
+      "spacing" : 0,
+      "text" : {
+        "size" : 35,
+        "colorSelected" : "#000000FF",
+        "font" : "System Light",
+        "color" : "#FEFFFEFF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#201324CC",
+      "paddingHorizontal" : 0,
+      "width" : 645,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 35,
+      "roundness" : -32,
+      "paddingVertical" : 0
+    },
+    "credit" : "Budi Irawan",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#694D0FFF",
+      "thickness" : 1
+    },
+    "name" : "Yo Alfred Dark"
+  }
+}

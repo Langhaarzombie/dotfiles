@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 10,
+        "colorSelected" : "#DEDEDEFF",
+        "font" : "System Light",
+        "color" : "#7C7C7CB1"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System Light",
+        "color" : "#5387F4A5"
+      },
+      "backgroundSelected" : "#5387F4FF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System Light",
+        "color" : "#D2D5DDFF"
+      },
+      "iconPaddingHorizontal" : 5,
+      "paddingVertical" : 4,
+      "iconSize" : 28
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#272C35B2",
+      "spacing" : 0,
+      "text" : {
+        "size" : 36,
+        "colorSelected" : "#FDFFFCFF",
+        "font" : "System Light",
+        "color" : "#FEFFFFFF"
+      },
+      "backgroundSelected" : "#559AF4FF"
+    },
+    "window" : {
+      "color" : "#21252AE4",
+      "paddingHorizontal" : 0,
+      "width" : 680,
+      "borderPadding" : 10,
+      "borderColor" : "#FFFFFF00",
+      "blur" : 19,
+      "roundness" : 3,
+      "paddingVertical" : 0
+    },
+    "credit" : "jovotrox",
+    "separator" : {
+      "color" : "#21252A00",
+      "thickness" : 4
+    },
+    "scrollbar" : {
+      "color" : "#D4D4D425",
+      "thickness" : 2
+    },
+    "name" : "Elegant Dark v5"
+  }
+}
