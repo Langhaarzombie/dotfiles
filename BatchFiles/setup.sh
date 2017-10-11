@@ -78,7 +78,7 @@ brew install \
 	tree \
     wget \
     zsh-autosuggestions \
-	zsh-syntax-highlighting 
+	zsh-syntax-highlighting
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\n" >> ~/.zshrc
@@ -122,7 +122,7 @@ git config --global core.excludesfile ~/.gitignore
 cat ../Git/defaultignore > ~/.gitignore
 
 git config --global mergetool.sublime.cmd "subl -w \$MERGED"
-git config --global mergetool.sublime.trustExitCode false 
+git config --global mergetool.sublime.trustExitCode false
 git config --global merge.tool sublime
 git mergetool -y
 
