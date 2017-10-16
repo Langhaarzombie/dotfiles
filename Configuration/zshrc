@@ -36,5 +36,8 @@ alias j="autojump"
 alias gf="git-flow"
 alias m="mix"
 alias nv="nvim"
+alias ta="tmux a -t"
+alias tns="tmux new -s"
+alias tls="tmux ls"
 
 clear
