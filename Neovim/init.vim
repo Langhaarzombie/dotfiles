@@ -1,3 +1,71 @@
+""""""""""""""""""""
+"     GENERAL      "
+""""""""""""""""""""
+
+" Line numbers
+set number
+
+" Easier command input
+set ignorecase
+set smartcase
+
+" Enable auto updates
+set autoread
+
+" How many lines vim should remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set up wildmenu
+set wildmode=longest:full
+set wildmenu
+
+" Always show current position
+set ruler
+
+" Set vertical to 10 lines
+set so=10
+
+" Height for command bar
+set cmdheight=2
+
+" Buffers get hidden after finishing
+set hid
+
+" Hate those swap files
+set noswapfile
+
+" Saerch acts like a modern search
+set incsearch
+
+" Dont redraw when executing macros - good for performance
+set lazyredraw
+
+" Enable regular expressions
+set magic
+
+" Clipboard = clipboard
+set clipboard=unnamed
+
+" Make backspace work the way it is supposed to work
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Custom tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Needed for tmux
+set t_8f=^[[38;2;%lu;%lu;%lum
+
+""""""""""""""""""""""""
+"       PLUGINS        "
+""""""""""""""""""""""""
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Theme
@@ -24,36 +92,23 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 
 " Markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
 call plug#end()
 
-" Needed for tmux
-set t_8f=^[[38;2;%lu;%lu;%lum
-
-" Theme settings
-syntax enable
-colorscheme tender
-
 " Emmet Settings
 let g:emmet_user_settings = {
-\	'intendation': '	'
+\	'intendation': '    '
 \}
 
 " Airline configs
 let g:airline_theme='tender'
 
+" Theme settings
+syntax enable
+colorscheme tender
+
 " Markdown Syntax
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_level = 2
-
-" General
-set number
-set tabstop=4
-set shiftwidth=4
-set ignorecase
-set smartcase
-
-

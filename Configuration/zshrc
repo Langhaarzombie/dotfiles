@@ -13,6 +13,9 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="$PATH:$(which elixir)"
 export PATH="$PATH:$(which elixirc)"
 export PATH="$PATH:$(which iex)"
+export PATH="$PATH:$HOME/.cargo/bin"
+
+export CLOUDAMQP_URL='amqp://nldowwmg:z9o08tVtONKfD_5LSUGoCikbixo1Yu27@impala.rmq.cloudamqp.com/nldowwmg'
 
 export LANG=en_US.utf8
 
@@ -31,6 +34,8 @@ alias ga="git add -A"
 alias gcm="git commit -m "
 alias gp="git push"
 alias gl="git pull"
+alias gs="git status"
+alias glog="g log --oneline --graph --stat --decorate"
 alias oc="sudo openconnect"
 alias j="autojump"
 alias gf="git-flow"
@@ -38,6 +43,11 @@ alias m="mix"
 alias nv="nvim"
 alias ta="tmux a -t"
 alias tns="tmux new -s"
+alias tcs="tns"
 alias tls="tmux ls"
+alias tks="tmux kill-session -t"
+alias vi="nvim"
+alias vim="nvim"
+alias VIM="sudo nvim"
 
 clear

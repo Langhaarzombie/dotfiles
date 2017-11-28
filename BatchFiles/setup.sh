@@ -65,20 +65,20 @@ brew cask install \
 
 echo "\nInstalling default non-cask apps...\n"
 brew install \
-	ack \
-	antigen \
-	autojump \
-	fzf \
-	git \
+    ack \
+    antigen \
+    autojump \
+    fzf \
+    git \
     git-flow-avh \
     neovim \
     openconnect \
     ruby \
-	screenfetch \
-	tree \
+    screenfetch \
+    tree \
     wget \
     zsh-autosuggestions \
-	zsh-syntax-highlighting
+    zsh-syntax-highlighting
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\n" >> ~/.zshrc
@@ -131,7 +131,7 @@ brew cleanup
 
 echo "\n========= FINISHED! ==========\n"
 exec zsh
-echo "\nInstlled casks via Homebrew:\n"
+echo "\nInstalled casks via Homebrew:\n"
 brew cask list
 echo "\nInstlled non-casks via Homebrew:\n"
 brew list

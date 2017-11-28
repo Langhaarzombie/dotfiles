@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -11,7 +13,7 @@
 	<key>BadgeRightMargin</key>
 	<integer>100</integer>
 	<key>BadgeTopMargin</key>
-	<integer>100</integer>
+	<integer>10</integer>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>3024 Day</key>
@@ -41972,6 +41974,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DoubleReportScrollWheel</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -42160,9 +42164,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1007 110 607 257 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>699 487 918 492 0 0 1680 1050 </string>
+	<string>699 565 1018 447 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>54 49 1572 952 0 0 1680 1050 </string>
+	<string>54 486 820 515 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>337 334 820 515 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -43623,7 +43627,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-05T07:06:18Z</date>
+	<date>2017-10-16T14:11:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
