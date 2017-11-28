@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 13,
+        "colorSelected" : "#FFFFFFC4",
+        "font" : "System",
+        "color" : "#FEFFFE65"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#FFFFFFFF"
+      },
+      "backgroundSelected" : "#0082C6FF",
+      "text" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#FEFFFEE5"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 5,
+      "iconSize" : 35
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#0082C6FF",
+      "spacing" : 4,
+      "text" : {
+        "size" : 26,
+        "colorSelected" : "#000000FF",
+        "font" : "System",
+        "color" : "#FEFFFEFF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#0082C6FF",
+      "paddingHorizontal" : 0,
+      "width" : 500,
+      "borderPadding" : 0,
+      "borderColor" : "#0082C6FF",
+      "blur" : 0,
+      "roundness" : 4,
+      "paddingVertical" : 0
+    },
+    "credit" : "Me",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#A9A9A9FF",
+      "thickness" : 2
+    },
+    "name" : "Flush"
+  }
+}
