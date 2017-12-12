@@ -15,7 +15,7 @@ export PATH="$PATH:$(which elixirc)"
 export PATH="$PATH:$(which iex)"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export CLOUDAMQP_URL='amqp://nldowwmg:z9o08tVtONKfD_5LSUGoCikbixo1Yu27@impala.rmq.cloudamqp.com/nldowwmg'
+source ~/Documents/dotfiles/Configuration/secret
 
 export LANG=en_US.utf8
 

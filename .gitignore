@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/osx,ruby,java,python
 
+# Custom Files
+secret*
+
 ### OSX ###
 *.DS_Store
 .AppleDouble

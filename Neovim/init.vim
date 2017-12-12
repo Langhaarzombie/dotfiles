@@ -5,7 +5,9 @@
 " Line numbers
 set number
 
-" Easier command input
+" Easier search and commands
+set incsearch
+set hlsearch
 set ignorecase
 set smartcase
 
@@ -29,8 +31,8 @@ set ruler
 " Set vertical to 10 lines
 set so=10
 
-" Height for command bar
-set cmdheight=2
+" Command bar
+set cmdheight=1
 
 " Buffers get hidden after finishing
 set hid
@@ -38,14 +40,14 @@ set hid
 " Hate those swap files
 set noswapfile
 
-" Saerch acts like a modern search
-set incsearch
-
 " Dont redraw when executing macros - good for performance
 set lazyredraw
 
 " Enable regular expressions
 set magic
+
+" Show dialog instead of failing command
+set confirm
 
 " Clipboard = clipboard
 set clipboard=unnamed
@@ -54,10 +56,39 @@ set clipboard=unnamed
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Moving lines
+nnoremap º :m .+1<CR>==
+nnoremap ∆ :m .-2<CR>==
+inoremap º <Esc>:m .+1<CR>==gi
+inoremap ∆ <Esc>:m .-2<CR>==gi
+vnoremap º :m '>+1<CR>gv=gv
+vnoremap ∆ :m '<-2<CR>gv=gv
+
+" Default leader
+let mapleader = ";"
+
 " Custom tabs
+set autoindent
+set smarttab
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Statusline
+set laststatus=2
+" set statusline=%<\ %f\ %m%r%w%=%y\ \ %l,%-3c\ %p%%\ "
+" set statusline 
+set noshowmode
+
+" Folding
+set foldlevelstart=999
+set foldmethod=indent
+
+" Undoing made comfortable
+set wildignore+=*.swp,*.bak
+set undofile
+set undodir=/tmp/
+set backupdir=~/.local/share/nvim/backup
 
 " Needed for tmux
 set t_8f=^[[38;2;%lu;%lu;%lum
@@ -69,7 +100,7 @@ set t_8f=^[[38;2;%lu;%lu;%lum
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Theme
-Plug 'jacoborus/tender.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Syntax Settings
 Plug 'sheerun/vim-polyglot'
@@ -80,11 +111,6 @@ Plug 'raimondi/delimitmate'
 " Emmet
 Plug 'mattn/emmet-vim'
 
-" Airline Statusbar
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'zacanger/angr.vim'
-
 " Multi Cursor
 Plug 'terryma/vim-multiple-cursors'
 
@@ -94,6 +120,21 @@ Plug 'airblade/vim-gitgutter'
 " Markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
+" Lightline
+Plug 'itchyny/lightline.vim'
+
+" Switching sides / panes / ...
+Plug 'christoomey/vim-tmux-navigator'
+
+" Commenting
+" Plug 'tomtom/tcomment_vim'
+
+" Easy sandwich deleting
+Plug 'wellle/targets.vim'
+
+" CSS Colors
+Plug 'ap/vim-css-color', {'for': 'css'}
+
 call plug#end()
 
 " Emmet Settings
@@ -101,12 +142,24 @@ let g:emmet_user_settings = {
 \	'intendation': '    '
 \}
 
-" Airline configs
-let g:airline_theme='tender'
+let g:lightline = {
+\   'colorscheme': 'custom',
+\   'active': {
+\       'right': [  [ 'lineinfo' ],
+\                   [ 'percent' ],
+\                   [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+\   },
+\   'component': {
+\       'charvaluehex': '0x%B'
+\ },
+\}
 
 " Theme settings
+set termguicolors
+set background=dark
 syntax enable
-colorscheme tender
+let ayucolor="dark"
+colorscheme ayu
 
 " Markdown Syntax
 let g:vim_markdown_folding_disabled = 1

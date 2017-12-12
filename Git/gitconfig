@@ -1,0 +1,6 @@
+[user]
+	name = Langhaarzombie
+	email = mixmax199989@gmail.com
+[core]
+	excludesfile = /Users/max/.gitignore
+	editor = nvim
