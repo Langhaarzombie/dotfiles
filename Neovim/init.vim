@@ -3,7 +3,12 @@
 """"""""""""""""""""
 
 " Line numbers
-set number
+set number relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
 
 " Easier search and commands
 set incsearch
@@ -27,9 +32,13 @@ set wildmenu
 
 " Always show current position
 set ruler
+set cursorline
 
-" Set vertical to 10 lines
-set so=10
+" No comment marker when pressing o or O or on Enter
+set fo-=r fo-=o
+
+" Set vertical scroll padding
+set so=9999
 
 " Command bar
 set cmdheight=1
@@ -43,7 +52,7 @@ set noswapfile
 " Dont redraw when executing macros - good for performance
 set lazyredraw
 
-" Enable regular expressions
+" Enable more regular expressions
 set magic
 
 " Show dialog instead of failing command
@@ -56,17 +65,6 @@ set clipboard=unnamed
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Moving lines
-nnoremap º :m .+1<CR>==
-nnoremap ∆ :m .-2<CR>==
-inoremap º <Esc>:m .+1<CR>==gi
-inoremap ∆ <Esc>:m .-2<CR>==gi
-vnoremap º :m '>+1<CR>gv=gv
-vnoremap ∆ :m '<-2<CR>gv=gv
-
-" Default leader
-let mapleader = ";"
-
 " Custom tabs
 set autoindent
 set smarttab
@@ -76,13 +74,7 @@ set expandtab
 
 " Statusline
 set laststatus=2
-" set statusline=%<\ %f\ %m%r%w%=%y\ \ %l,%-3c\ %p%%\ "
-" set statusline 
 set noshowmode
-
-" Folding
-set foldlevelstart=999
-set foldmethod=indent
 
 " Undoing made comfortable
 set wildignore+=*.swp,*.bak
@@ -93,6 +85,38 @@ set backupdir=~/.local/share/nvim/backup
 " Needed for tmux
 set t_8f=^[[38;2;%lu;%lu;%lum
 
+"""""""""""""""""""""""""""""""
+"       CUSTOM MAPPINGS       "
+"""""""""""""""""""""""""""""""
+
+" Default leader
+let mapleader = ";"
+
+" Delete a word even when in the middle of it
+nnoremap <leader>dw lbdw
+
+" Clear a line and go to insert
+nnoremap <leader>dd ddO
+
+" Moving lines
+nnoremap º :m .+1<CR>==
+nnoremap ∆ :m .-2<CR>==
+inoremap º <Esc>:m .+1<CR>==gi
+inoremap ∆ <Esc>:m .-2<CR>==gi
+vnoremap º :m '>+1<CR>gv=gv
+vnoremap ∆ :m '<-2<CR>gv=gv
+
+" No search highlights anymore
+nnoremap <leader><leader> :nohlsearch<Cr>:echo ""<Cr>
+
+" Completion menu modifications
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+            \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+            \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'<Paste>
+
 """"""""""""""""""""""""
 "       PLUGINS        "
 """"""""""""""""""""""""
@@ -101,6 +125,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Theme
 Plug 'ayu-theme/ayu-vim'
+Plug 'morhetz/gruvbox'
 
 " Syntax Settings
 Plug 'sheerun/vim-polyglot'
@@ -127,7 +152,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Commenting
-" Plug 'tomtom/tcomment_vim'
+Plug 'scrooloose/nerdcommenter'
 
 " Easy sandwich deleting
 Plug 'wellle/targets.vim'
@@ -156,12 +181,27 @@ let g:lightline = {
 
 " Theme settings
 set termguicolors
-set background=dark
 syntax enable
-let ayucolor="dark"
-colorscheme ayu
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
+colorscheme gruvbox
+highlight CursorLine guibg=#3c3836
+
+" GitGutter signs column
+let g:gitgutter_override_sign_column_highlight=0
+set signcolumn=yes
+highlight SignColumn guibg=#1b1b1b
+highlight GitGutterAdd guibg=#1b1b1b
+highlight GitGutterChange guibg=#1b1b1b
+highlight GitGutterDelete guibg=#1b1b1b
+highlight GitGutterChangeDelete guibg=#1b1b1b
 
 " Markdown Syntax
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_level = 2
+
+" NERDcommenting
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
