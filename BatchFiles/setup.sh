@@ -121,10 +121,10 @@ git config --global user.email "mixmax199989@gmail.com"
 git config --global core.excludesfile ~/.gitignore
 cat ../Git/defaultignore > ~/.gitignore
 
-git config --global mergetool.sublime.cmd "subl -w \$MERGED"
-git config --global mergetool.sublime.trustExitCode false
-git config --global merge.tool sublime
-git mergetool -y
+# git config --global mergetool.sublime.cmd "subl -w \$MERGED"
+# git config --global mergetool.sublime.trustExitCode false
+# git config --global merge.tool sublime
+# git mergetool -y
 
 echo "\nCleaning up...\n"
 brew cleanup

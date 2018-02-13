@@ -1,7 +1,8 @@
 " Black
 let s:base03 =  [ '#151513', 233 ]
 " Background
-let s:base02 =  [ '#121212', 236 ]
+" let s:base02 =  [ '#121212', 236 ]
+let s:base02 =  [ '#1b1b1b', 236 ]
 " Lightgrey
 let s:base01 =  [ '#4e4e43', 239 ]
 " Lightergrey

@@ -8,8 +8,6 @@
 	<true/>
 	<key>hideshortcuts</key>
 	<true/>
-	<key>saveposition</key>
-	<true/>
 	<key>visibleresults</key>
 	<integer>4</integer>
 </dict>

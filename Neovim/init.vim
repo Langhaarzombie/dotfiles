@@ -33,6 +33,11 @@ set wildmenu
 " Always show current position
 set ruler
 set cursorline
+augroup cursernrcolor
+    autocmd!
+    autocmd InsertEnter * highlight CursorLineNr guibg=#3c3890 guifg=#ebdbb2
+    autocmd InsertLeave * highlight CursorLineNr guibg=#3c3836 guifg=#fabd2f
+augroup END
 
 " No comment marker when pressing o or O or on Enter
 set fo-=r fo-=o
@@ -57,6 +62,10 @@ set magic
 
 " Show dialog instead of failing command
 set confirm
+
+" Timeout for fast escape
+set timeoutlen=1000
+set ttimeoutlen=0
 
 " Clipboard = clipboard
 set clipboard=unnamed
@@ -92,15 +101,24 @@ set t_8f=^[[38;2;%lu;%lu;%lum
 " Default leader
 let mapleader = ";"
 
-" Delete a word even when in the middle of it
-nnoremap <leader>dw lbdw
+" Escape the escape key
+vnoremap kj <Esc>
+onoremap kj <Esc>
+inoremap kj <Esc>
+cnoremap kj <Esc>
 
 " Clear a line and go to insert
 nnoremap <leader>dd ddO
 
+" Spilt
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
+nnoremap <leader>o :only<CR>
+nnoremap <leader>q :q<CR>
+
 " Moving lines
-nnoremap º :m .+1<CR>==
-nnoremap ∆ :m .-2<CR>==
+nnoremap º :m .+1<CR>==:echo ""<CR>
+nnoremap ∆ :m .-2<CR>==:echo ""<CR>
 inoremap º <Esc>:m .+1<CR>==gi
 inoremap ∆ <Esc>:m .-2<CR>==gi
 vnoremap º :m '>+1<CR>gv=gv
@@ -181,7 +199,7 @@ let g:lightline = {
 
 " Theme settings
 set termguicolors
-syntax enable
+syntax on
 let g:gruvbox_invert_selection = 0
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark

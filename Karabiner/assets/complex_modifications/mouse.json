@@ -1,0 +1,25 @@
+{
+    "title": "Switch desktop with foward and drag",
+    "rules": [
+        {
+            "description": "Dektop left",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "pointing_button": "button5",
+                        "mouse_key": {"x": -1536}
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
