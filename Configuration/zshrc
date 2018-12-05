@@ -14,6 +14,7 @@ export PATH="$PATH:$(which elixir)"
 export PATH="$PATH:$(which elixirc)"
 export PATH="$PATH:$(which iex)"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:/usr/local/go/bin"
 
 source ~/Documents/dotfiles/Configuration/secret
 
@@ -24,9 +25,25 @@ source ~/.antigenrc
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Override normal cd to use lf (github.com/gokcehan/lf)
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
 #Aliases and command mods
 cd() { builtin cd "$@" && ls; }
 ..() { builtin cd .. && ls; }
+# cd() { lfcd }
 alias reload="exec zsh"
 alias l="ls -a"
 alias g="git"
@@ -40,6 +57,9 @@ alias oc="sudo openconnect"
 alias j="autojump"
 alias gf="git-flow"
 alias m="mix"
+alias mr="mix run"
+alias iexs="iex -S mix"
+alias iexsr="iex -S mix run"
 alias nv="nvim"
 alias ta="tmux a -t"
 alias tns="tmux new -s"
@@ -49,5 +69,7 @@ alias tks="tmux kill-session -t"
 alias vi="nvim"
 alias vim="nvim"
 alias VIM="sudo nvim"
+alias .="nvim ."
+alias cat="bat --theme=GitHub"
 
 clear

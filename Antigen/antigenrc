@@ -4,9 +4,12 @@ _ANTIGEN_CACHE_ENABLED="false"
 
 antigen use oh-my-zsh
 
+antigen theme robbyrussell
+
 antigen bundle git
 antigen bundle sudo
 antigen bundle git-flow
 antigen bundle alias-tips
+antigen bundle docker
 
 antigen apply
