@@ -40,7 +40,6 @@ brew cask install \
     alfred \
     android-file-transfer \
     appcleaner \
-    cheatsheet \
     discord \
     docker \
     dropbox \
@@ -54,7 +53,6 @@ brew cask install \
     numi \
     shifty \
     slack \
-    spacelauncher \
     spotify \
     spotify-notifications \
     steam \

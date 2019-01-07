@@ -1,24 +1,21 @@
-" Tomorrow - Full Colour and 256 Colour
-" http://chriskempson.com
-"
-" Hex colour conversion functions borrowed from the theme "Desert256""
-
 " Default GUI Colours
-let s:foreground = "4d4d4c"
-let s:background = "ffffff"
-let s:selection = "d6d6d6"
-let s:line = "efefef"
+let s:foreground = "dbc1a7"
+let s:background = "292b33"
+let s:selection = "4c4b53"
+let s:line = s:selection
 let s:comment = "8e908c"
-let s:red = "c82829"
-let s:orange = "f5871f"
-let s:yellow = "eab700"
-let s:green = "718c00"
-let s:aqua = "3e999f"
-let s:blue = "4271ae"
-let s:purple = "8959a8"
-let s:window = "efefef"
+" let s:red = "d55742"
+let s:nice_red = "d55742"
+let s:red = s:foreground
+let s:orange = "f8bb3a"
+let s:yellow = s:orange
+let s:green = "95cc5d"
+let s:aqua = "db774c"
+let s:blue = "5fbdcd"
+let s:purple = "b7869a"
+let s:window = s:background
 
-set background=light
+set background=dark
 hi clear
 syntax reset
 
@@ -237,7 +234,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:foreground, s:yellow, "")
+	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
@@ -248,7 +245,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
-	call <SID>X("WarningMsg", s:red, "", "")
+	call <SID>X("WarningMsg", s:nice_red, "", "")
 	call <SID>X("MatchParen", "", s:selection, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
@@ -466,7 +463,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Git
 	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
+	call <SID>X("diffRemoved", s:nice_red, "", "")
 	call <SID>X("gitcommitSummary", "", "", "bold")
 
 	" Delete Functions
