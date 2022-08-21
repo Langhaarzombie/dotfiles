@@ -1,0 +1,40 @@
+configuration {
+    modi: "combi";
+    font: "Fira Code 15";
+    combi-modi: "drun,run";
+}
+@theme "/usr/share/rofi/themes/Pop-Dark.rasi"
+
+* {
+    margin: 2px;
+    background-color: #111314;
+    foreground: #b7bbb7;
+}
+
+window {
+    border-color: #e2995c;
+    border: 1px;
+}
+
+inputbar {
+    children: [textbox-prompt-colon,entry];
+}
+
+textbox-prompt-colon {
+    str: "::";
+}
+
+entry {
+    placeholder: "";
+}
+
+element-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+element selected normal {
+    background-color: inherit;
+    color: #e2995c;
+}
+

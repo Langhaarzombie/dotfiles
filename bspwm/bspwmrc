@@ -1,0 +1,33 @@
+#! /bin/sh
+
+# Mouse pointer appearance
+xsetroot -cursor_name left_ptr &
+
+# Start shortcut daemon
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+## BSPWM configs ##
+if [ "$(xrandr | grep -sw 'connected' | wc -l)" = "2" ]; then
+  bspc monitor $(bspc query -M | sed -n 1p) -d 1 2 3 4 5
+  bspc monitor $(bspc query -M | sed -n 2p) -d 6 7 8 9
+else
+  bspc monitor -d 1 2 3 4 5
+fi
+
+bspc config border_width   2
+bspc config window_gap     10
+bspc config split_ratio    0.5
+
+bspc config borderless_monocle          true
+bspc config gapless_monocle             true
+bspc config focus_follows_pointer       true
+
+bspc config focused_border_color    '#e2995c'
+
+bspc rule -a Screenkey manage=off
+bspc rule -a matplotlib state=floating
+
+# Autolaunch everything
+$HOME/.config/polybar/launch.sh &
+~/.fehbg &
+dunst > /dev/null 2>&1 &
